@@ -3,6 +3,7 @@ package util;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import org.openqa.selenium.By;
@@ -37,6 +38,7 @@ public class ElementHelper {
     public WebElement findElement(By key) {
         WebElement element = presenceElement(key);
         //scrollToElement(element);
+
         return element;
     }
 
@@ -106,7 +108,6 @@ public class ElementHelper {
                .perform ();
 
     }
-
     /**
      * @param key
      * @param text

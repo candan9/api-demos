@@ -2,6 +2,7 @@ package pages;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,6 +19,7 @@ public class HomePage {
     WebDriverWait wait;
     ElementHelper elementHelper;
     Actions action;
+
 
     public HomePage(AppiumDriver driver) {
         this.driver = driver;

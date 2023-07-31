@@ -1,6 +1,7 @@
 package util;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
@@ -12,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class DriverFactory {
     static AppiumDriver driver;
     static Properties properties;
+    static AndroidDriver androidDriver;
     static DesiredCapabilities capabilities;
 
     public static AppiumDriver initialize_Driver(String browser) {
