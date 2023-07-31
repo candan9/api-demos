@@ -12,7 +12,7 @@ public class Hooks {
     Properties properties;
     @Before
     public void before() {
-        String browser = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("Android");
+        String browser = "Android";
         properties = ConfigReader.initialize_Properties();
         driver = DriverFactory.initialize_Driver(browser);
     }

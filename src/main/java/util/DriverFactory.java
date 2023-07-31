@@ -24,11 +24,15 @@ public class DriverFactory {
             browser="Android";
         }
         if (browser.equals("Android")) {
-            capabilities.setCapability("platformName", "Android");
+            capabilities.setCapability("appium:platformName", "Android");
             capabilities.setCapability("udid", "emulator-5554");
-            capabilities.setCapability("automationName","UiAutomator2");
+            capabilities.setCapability("appium:automationName","UiAutomator2");
             capabilities.setCapability("app", app.getAbsolutePath());
             capabilities.setCapability("avd","Pixel_7_API_31");
+            capabilities.setCapability("appium:autoGrantPermissions", "true");
+
+            capabilities.setCapability("appium:fullReset", "true");
+
         } else if (browser.equals("iOS")) {
             capabilities.setCapability("platformName", "iOS");
             capabilities.setCapability("udid", "emrec");

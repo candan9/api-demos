@@ -8,11 +8,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import util.ElementHelper;
 
 public class HomePage {
+    String appName = "API Demos";
 
-    By section_full_name = MobileBy.id("com.lcwaikiki.android:id/txtWelcomeHeader");
-    By btn_skip = MobileBy.id("com.lcwaikiki.android:id/tvNext");
-    By btn_tabs = MobileBy.AndroidUIAutomator("new UiSelector().resourceId(\"com.lcwaikiki.android:id/textItemTab\")");
-    By btn_cart = MobileBy.className("android.widget.TextView");
+    By btn_popup_okay = MobileBy.id("android:id/button1");
+
+
+    By btn_tabs = MobileBy.AndroidUIAutomator("new UiSelector().resourceId(\"android:id/text1\")");
+
     AppiumDriver driver;
     WebDriverWait wait;
     ElementHelper elementHelper;
@@ -25,30 +27,14 @@ public class HomePage {
         this.action = new Actions(driver);
     }
 
-    public void clickSkipButton() {
-        elementHelper.checkElementPresence(btn_skip);
-        elementHelper.click(btn_skip);
+    public void clickPopupOkButton() {
+        elementHelper.checkElementPresence(btn_popup_okay);
+        elementHelper.click(btn_popup_okay);
     }
 
-    public String checkUserLoggedIn() {
-        elementHelper.checkElementPresence(section_full_name);
-       return elementHelper.getText(section_full_name);
-    }
-
-    public void assertTitle(String title) {
-        elementHelper.checkElementWithText(btn_tabs,title);
-    }
 
     public void clickTab(String title) {
         elementHelper.clickElementWithText(btn_tabs,title);
     }
 
-    public void checkHomePage() {
-        elementHelper.checkElementPresence(btn_skip);
-    }
-
-    public void goToCart() {
-        elementHelper.checkElementVisible(btn_cart);
-        elementHelper.clickElementContainext(btn_cart,"Sepete Git");
-    }
 }

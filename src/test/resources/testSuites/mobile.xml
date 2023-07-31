@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="LCWaikiki" verbose="1" >
+<suite name="APIDemos" verbose="1" >
     <parameter name="browser"  value="Android"/>
-    <test name="Welcome Page Android">
+    <test name="API Demos">
         <classes>
             <class name="testRunners.runner"/>
         </classes>
