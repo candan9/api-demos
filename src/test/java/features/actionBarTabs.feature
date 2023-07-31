@@ -1,5 +1,5 @@
 @Regression
-Feature: Login Page
+Feature: Action Bar Page
 
   @ActionBarTabs
   Scenario: Action Bar Tabs

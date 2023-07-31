@@ -1,5 +1,5 @@
 @Regression
-Feature: Login Page
+Feature: ActivityPage
 
   @CustomTitle
   Scenario: Custom Title

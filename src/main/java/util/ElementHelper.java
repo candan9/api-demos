@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import java.util.List;
+import java.util.Random;
 import java.util.regex.Pattern;
 
 public class ElementHelper {
@@ -57,7 +58,12 @@ public class ElementHelper {
 
         return elements;
     }
+    public int getElementsCount(By key) {
+        List<WebElement> elements = presenceElements(key);
+        //scrollToElement(elements.get(0));
 
+        return elements.size();
+    }
     public List<WebElement> checkElementsCount(By key, int count) {
         return wait.until(ExpectedConditions.numberOfElementsToBe(key, count));
     }
@@ -67,7 +73,14 @@ public class ElementHelper {
     public void click(By key) {
         findElement(key).click();
     }
-
+    public void clickWithIndex(By key, int index) {
+        List<WebElement> elements = presenceElements(key);
+        elements.get(index).click();
+    }
+    public String getTextWithIndex(By key, int index) {
+        List<WebElement> elements = presenceElements(key);
+        return elements.get(index).getText();
+    }
     /**
      * @param key
      * @param text
@@ -217,7 +230,6 @@ public class ElementHelper {
      * @return
      */
     public List<WebElement> presenceElements(By key) {
-
         return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(key));
     }
 
