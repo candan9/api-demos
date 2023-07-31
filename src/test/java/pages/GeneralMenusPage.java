@@ -2,6 +2,7 @@ package pages;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.android.AndroidDriver;
 import org.aspectj.bridge.AbortException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
@@ -21,7 +22,6 @@ public class GeneralMenusPage   {
     WebDriverWait wait;
     ElementHelper elementHelper;
     Actions action;
-
     public GeneralMenusPage(AppiumDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, 10);
