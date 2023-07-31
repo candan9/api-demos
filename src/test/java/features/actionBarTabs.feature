@@ -1,4 +1,4 @@
-@HomePage @Regression
+@Regression
 Feature: Login Page
 
   @ActionBarTabs

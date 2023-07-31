@@ -30,7 +30,6 @@ public class DriverFactory {
             capabilities.setCapability("app", app.getAbsolutePath());
             capabilities.setCapability("avd","Pixel_7_API_31");
             capabilities.setCapability("appium:autoGrantPermissions", "true");
-
             capabilities.setCapability("appium:fullReset", "true");
 
         } else if (browser.equals("iOS")) {
