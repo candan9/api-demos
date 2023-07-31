@@ -28,7 +28,6 @@ public class CustomTitlePage {
     public void clickLeftEditButton() {
         elementHelper.checkElementPresence(btn_left);
         elementHelper.click(btn_left);
-
     }
     public void clickRightEditButton() {
         elementHelper.checkElementPresence(btn_right);
