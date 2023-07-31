@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abf3b791-9372-4c45-806f-8eb7ebf9ea67" name="Changes" comment="Scenario2 finished">
-      <change afterPath="$PROJECT_DIR$/src/test/java/features/alertDialogs.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/AlertDialogsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/alertDialogsStepDefs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/features/enableAdmin.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/GeneralMenusPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/generalMenusStepDefs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/testRunners/runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testRunners/runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/ElementHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ElementHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/features/actionBarTabs.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/features/actionBarTabs.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/features/customTitle.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/features/customTitle.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CustomTitlePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CustomTitlePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="scenario2" />
+        <entry key="$PROJECT_DIR$" value="scenario3" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -54,7 +50,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;scenario3&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;scenario4&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Emre/IdeaProjects/api-demos/src/test&quot;
   }
@@ -69,14 +65,14 @@
     </key>
   </component>
   <component name="RunManager" selected="TestNG.C:/Users/Emre/IdeaProjects/api-demos/src/test/resources/testSuites/mobile.xml">
-    <configuration name="Feature: actionBarTabs" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Feature: enableAdmin" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/features/actionBarTabs.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/java/features/enableAdmin.feature" />
       <option name="GLUE" value="util stepDefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="api-demos" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: actionBarTabs" />
+      <option name="SUGGESTED_NAME" value="Feature: enableAdmin" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -161,10 +157,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/Emre/IdeaProjects/api-demos/src/test/resources/testSuites/mobile.xml" />
+        <item itemvalue="Cucumber Java.Feature: enableAdmin" />
         <item itemvalue="Cucumber Java.Scenario: Custom Title (1)" />
         <item itemvalue="Cucumber Java.Scenario: Custom Title" />
         <item itemvalue="Cucumber Java.Scenario: Action Bar Tabs" />
-        <item itemvalue="Cucumber Java.Feature: actionBarTabs" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690829143053</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Scenario2 finished">
+      <option name="closed" value="true" />
+      <created>1690832050482</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690832050482</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
