@@ -140,7 +140,13 @@ public class ElementHelper {
             return false;
         }
     }
-
+    public boolean checkElementDisplayed(By key) {
+        try {
+            return wait.until(ExpectedConditions.invisibilityOf(findElement(key)));
+        } catch (NotFoundException e) {
+            return false;
+        }
+    }
     /**
      * @param text
      * @return
