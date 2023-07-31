@@ -7,33 +7,26 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import util.ElementHelper;
 
-public class HomePage {
-
-    By btn_popup_okay = MobileBy.id("android:id/button1");
-
-
-    By btn_tabs = MobileBy.AndroidUIAutomator("new UiSelector().resourceId(\"android:id/text1\")");
-
+public class ContextMenuPage {
+    By btn_long_press = MobileBy.id("com.hmh.api:id/long_press");
+    By menus = MobileBy.id("android:id/title");
     AppiumDriver driver;
     WebDriverWait wait;
     ElementHelper elementHelper;
     Actions action;
 
-    public HomePage(AppiumDriver driver) {
+    public ContextMenuPage(AppiumDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, 10);
         this.elementHelper = new ElementHelper(driver);
         this.action = new Actions(driver);
     }
-
-    public void clickPopupOkButton() {
-        elementHelper.checkElementPresence(btn_popup_okay);
-        elementHelper.click(btn_popup_okay);
+    public void longPressToButton() {
+        elementHelper.checkElementPresence(btn_long_press);
+        elementHelper.longPress(btn_long_press);
     }
-
-
-    public void clickTab(String title) {
-        elementHelper.clickElementWithText(btn_tabs,title);
+    public void checkMenus(String textA, String textB) {
+        elementHelper.checkElementWithText(menus,textA);
+        elementHelper.checkElementWithText(menus,textB);
     }
-
 }

@@ -2,6 +2,9 @@ package util;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.LongPressOptions;
+import io.appium.java_client.touch.offset.ElementOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.NotFoundException;
@@ -16,7 +19,7 @@ import java.util.regex.Pattern;
 
 public class ElementHelper {
     AppiumDriver driver;
-
+    TouchAction touchAction;
     WebDriverWait wait;
     Actions action;
 
@@ -24,6 +27,7 @@ public class ElementHelper {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, 10);
         this.action = new Actions(driver);
+        this.touchAction = new TouchAction(driver);
     }
 
     /**
@@ -95,6 +99,12 @@ public class ElementHelper {
      */
     public String getText(By key) {
         return findElement(key).getText();
+    }
+    public void longPress(By key){
+       touchAction.longPress(LongPressOptions.longPressOptions()
+                       .withElement (ElementOption.element (presenceElement(key))))
+               .perform ();
+
     }
 
     /**
