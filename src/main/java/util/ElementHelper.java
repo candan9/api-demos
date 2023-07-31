@@ -3,6 +3,8 @@ package util;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,6 +15,7 @@ import java.util.regex.Pattern;
 
 public class ElementHelper {
     AppiumDriver driver;
+
     WebDriverWait wait;
     Actions action;
 
@@ -32,9 +35,15 @@ public class ElementHelper {
         return element;
     }
 
+
     public WebElement findFirstElement(By key) {
         List<WebElement> elements = presenceElements(key);
         WebElement element = elements.get(0);
+        return element;
+    }
+    public WebElement findLastElement(By key) {
+        List<WebElement> elements = presenceElements(key);
+        WebElement element = elements.get(elements.size()-1);
         return element;
     }
 
@@ -45,9 +54,13 @@ public class ElementHelper {
     public List<WebElement> findElements(By key) {
         List<WebElement> elements = presenceElements(key);
         //scrollToElement(elements.get(0));
+
         return elements;
     }
 
+    public List<WebElement> checkElementsCount(By key, int count) {
+        return wait.until(ExpectedConditions.numberOfElementsToBe(key, count));
+    }
     /**
      * @param key
      */
@@ -83,16 +96,26 @@ public class ElementHelper {
     /**
      * @param key
      */
-    public void checkElementVisible(By key) {
-        wait.until(ExpectedConditions.visibilityOf(findElement(key)));
+    public boolean checkElementVisible(By key) {
+        try {
+            presenceElements(key);
+            return true;
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }
+
     }
 
     /**
      *
      * @param key
      */
-    public void checkElementPresence(By key) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(key));
+    public boolean checkElementPresence(By key) {
+        try {
+            return !driver.findElements(key).isEmpty();
+        } catch (NotFoundException e) {
+            return false;
+        }
     }
 
     /**
@@ -153,17 +176,15 @@ public class ElementHelper {
      * @param key
      * @param text
      */
-    public void checkElementWithText(By key, String text) {
-        boolean find = false;
+    public boolean checkElementWithText(By key, String text) {
+
         List<WebElement> elements = findElements(key);
         for (WebElement element : elements) {
-            if (element.getText().contains(text)) {
-                find = true;
-                break;
-            }
+            if (element.getText().contains(text)) return true;
         }
-        Assert.assertTrue(find);
+        return false;
     }
+
 
     /**
      * @param key
@@ -180,7 +201,7 @@ public class ElementHelper {
                 break;
             }
         }
-        Assert.assertEquals(true, find);
+        Assert.assertTrue(find);
     }
 
     /**
@@ -196,6 +217,7 @@ public class ElementHelper {
      * @return
      */
     public List<WebElement> presenceElements(By key) {
+
         return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(key));
     }
 
