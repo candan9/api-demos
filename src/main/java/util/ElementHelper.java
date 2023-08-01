@@ -4,16 +4,19 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidTouchAction;
 import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.offset.ElementOption;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.NotFoundException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.time.Duration;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.regex.Pattern;
@@ -107,6 +110,26 @@ public class ElementHelper {
                        .withElement (ElementOption.element (presenceElement(key))))
                .perform ();
 
+    }
+    public void scrollToBottom(){
+        Dimension size = driver.manage().window().getSize();
+        int startX = size.getWidth()/5 ;
+        int endX = size.getWidth() /3;
+        int startY = size.getHeight() ;
+        int endY = (int) (size.getHeight() * 0.25);
+
+        performScrollUsingSequence(startX, startY, endX, endY);
+    }
+    private void performScrollUsingSequence(int startX, int startY, int endX, int endY) {
+        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "first-finger");
+        Sequence sequence = new Sequence(finger, 0)
+                .addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY))
+                .addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()))
+                .addAction(finger.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), endX, endY))
+                .addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+
+        driver.perform(Collections.singletonList(sequence));
     }
     /**
      * @param key
