@@ -15,7 +15,8 @@ Testlerin koşması için appium server açık olmalıdır.
 Testler "resources/testSuites/mobile.xml" dosyasını çalıştırarak tetiklenir.
 Ayrıca ayrı ayrı feature dosyalarından ve test runner üzerinden de çalıştırılabilir.
 
-![appium6](https://user-images.githubusercontent.com/49526501/174345832-3a4c6e5f-141d-4ae2-82cd-b6ad9479ee5e.png)
+![appium](https://github.com/candan9/api-demos/assets/49526501/f8208477-cf5c-4776-b1b9-ee98e3491bb1)
+
 
 Eğer resimdeki cihazın kurumulunu yaparsanız, Emulator, mobile.xml dosyası çalıştırıldığında otomatik olarak açılacaktır.
 
